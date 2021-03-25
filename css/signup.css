@@ -1,0 +1,30 @@
+.form{
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background: rgb(250,250,250);
+  margin: 5px;
+}
+.signup{
+  margin:20px auto;
+  max-width: 400px;
+}
+
+.form *{
+  margin:10px;
+  height:2.5rem;
+  border-radius: 5px;
+  outline: none;
+  border: grey 1px solid;
+
+}
+
+#signup{
+  width:30%;
+  font-size: large;
+  background-color: rgb(218, 49, 49);
+  color:white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

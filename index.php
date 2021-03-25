@@ -8,13 +8,12 @@
   <title>Watch It</title>
 </head>
 <body>
-  <header class="header">
-    <h1 class="title">Watch It</h1>
-    <p class="description">Keep track of your favorite Movies and Tv Shows</p>
-  </header>
+  <?php 
+    include("includes/header.php");
+  ?>
   <main class="login-signup">
-    <button class="btn"><a href="#">Log-in</a></button>
-    <button class="btn"><a href="#">Sign Up</a></button>
+    <button class="btn"><a href="#">Log in</a></button>
+    <button class="btn"><a href="signup.php">Sign Up</a></button>
   </main>
   
 </body>
