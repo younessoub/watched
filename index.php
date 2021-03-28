@@ -12,8 +12,9 @@
     include("includes/header.php");
   ?>
   <main class="login-signup">
-    <button class="btn"><a href="#">Log in</a></button>
-    <button class="btn"><a href="signup.php">Sign Up</a></button>
+    
+    <a href="login.php"><button  class="btn"> Log In</button></a>
+    <a href="signup.php"><button  class="btn">Sign Up</button></a>
   </main>
   
 </body>

@@ -1,25 +1,29 @@
 .login-signup{
-  margin: 20vh auto auto auto;
+  margin: 3rem auto auto auto;
   width: 60vw;
   max-width: 400px;
   display: flex;
-  flex-direction: column;
-  
+  flex-direction: column;  
 }
 
 .btn{
   font-size: 1.5rem;
-  margin: 20px;
+  width: 100%;
   font-weight: 700;
   background-color: rgb(255, 255, 255);
   border: none;
   border-radius: 5px;
   height:3rem;
   cursor: pointer;
+  margin: 20px 0;
   
 }
 
-.btn a{
-  text-decoration: none;
+.login-signup a{
+
 }
+
+
+
+
 
