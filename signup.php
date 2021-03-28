@@ -5,8 +5,7 @@
   require("includes/db.php");
   require("includes/functions.php");
 
-  //$sql = "INSERT INTO USERS (name, email, password) VALUES('Youness', 'oubelkacem.youness@gmail.com', 'Younwatchit1')";
-  //mysqli_query($conn, $sql);
+
   $errors = array('email'=>'','username'=>'','password'=>'','rpassword'=>'');
   
   if(isset($_POST['submit'])){
@@ -57,8 +56,17 @@
 
     }
 
-
-
+    if(!array_filter($errors)){
+      
+      $n = mysqli_real_escape_string($conn, $name);
+      $e = mysqli_real_escape_string($conn, $email);
+      $p = mysqli_real_escape_string($conn, $password);
+      $hp = password_hash($p, PASSWORD_DEFAULT);
+      $sql = "INSERT INTO users (name, email, password) VALUES('$n','$e', '$hp')";
+      mysqli_query($conn, $sql);
+      header("location: login.php?a=created");
+      exit();
+    }
   }
 
 
