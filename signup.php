@@ -51,7 +51,7 @@
         }
       }
 
-      if($password!=$rpassword){
+      else{
         $errors['rpassword'] = "Passwords don't match"; 
       }
 
