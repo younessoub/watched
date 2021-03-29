@@ -1,0 +1,39 @@
+.login{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin:auto ;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.login #submit{
+  min-width: 100px;
+  width:30%;
+  background-color: rgb(218, 49, 49);
+  color: white;
+  font-size: large;
+  cursor: pointer;
+}
+
+.login input{
+  outline: none;
+  border : grey 1px solid ;
+  border-radius: 5px;
+  margin:10px;
+  height:2.5rem;
+  
+}
+
+.success{
+  color:green;
+  text-align: center;
+  padding: 10px;
+}
+
+.wrong{
+  color: red;
+  text-align: center;
+  
+}

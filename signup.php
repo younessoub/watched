@@ -22,7 +22,7 @@
       if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         $errors['email'] = 'Invalid email';
       }
-      if(emailExists($email,$conn)){
+      if(emailExists($conn, $email)){
         $errors['email'] = 'This Email is already used';
       }
       
@@ -58,12 +58,14 @@
 
     if(!array_filter($errors)){
       
-      $n = mysqli_real_escape_string($conn, $name);
-      $e = mysqli_real_escape_string($conn, $email);
-      $p = mysqli_real_escape_string($conn, $password);
-      $hp = password_hash($p, PASSWORD_DEFAULT);
-      $sql = "INSERT INTO users (name, email, password) VALUES('$n','$e', '$hp')";
-      mysqli_query($conn, $sql);
+      
+      $hp = password_hash($password, PASSWORD_DEFAULT);
+      $sql = "INSERT INTO users (name, email, password) VALUES(?,?, ?);";
+      $stmt = mysqli_stmt_init($conn);
+      mysqli_stmt_prepare($stmt, $sql);
+      mysqli_stmt_bind_param($stmt, "sss", $name, $email, $hp);
+      mysqli_stmt_execute($stmt);
+      
       header("location: login.php?a=created");
       exit();
     }
@@ -82,7 +84,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/signup.css">
+  <link rel="stylesheet" href="css/signup.css?v=<?php echo time(); ?>">
   <title>Sign-up</title>
 </head>
 <body>

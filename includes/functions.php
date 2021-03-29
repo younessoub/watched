@@ -1,28 +1,25 @@
 <?php
 
-//check if email exist in database
-function emailExists($email,$conn){
-    $sql = "SELECT * FROM users WHERE email = '$email' ";
-
-    $res = mysqli_query($conn, $sql);
-    
-    if(mysqli_num_rows($res)>0){
-      return true;
-    }
-    return false;
+  //check if email exist in database
+  function emailExists($conn, $email){
+    $sql = "SELECT * FROM users WHERE email = ?;";
+    $stmt = mysqli_stmt_init($conn);
+    mysqli_stmt_prepare($stmt, $sql);
+    mysqli_stmt_bind_param($stmt,"s",$email);
+    mysqli_stmt_execute($stmt);
+    $res = mysqli_stmt_get_result($stmt);
+    return (mysqli_num_rows($res)>0) ? true : false;
   }
 
   //check if username exist in database
 
   function userNameExists($conn, $name){
-    $sql = "SELECT * FROM users WHERE name = '$name' ";
-    $res = mysqli_query($conn, $sql);
-    /*if(mysqli_num_rows($res) > 0){
-      return true;
-    }
-    return false;*/
-    
-
+    $sql = "SELECT * FROM users WHERE name = ?; ";
+    $stmt = mysqli_stmt_init($conn);
+    mysqli_stmt_prepare($stmt, $sql);
+    mysqli_stmt_bind_param($stmt,"s",$name);
+    mysqli_stmt_execute($stmt);
+    $res = mysqli_stmt_get_result($stmt);
     return (mysqli_num_rows($res)>0) ? true : false;
   }
 
@@ -33,4 +30,4 @@ function emailExists($email,$conn){
     return $data;
   }
 
-  ?>
+?>
