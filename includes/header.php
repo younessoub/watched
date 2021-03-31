@@ -11,10 +11,11 @@ body{
   font-family: 'Roboto Mono', monospace;
   margin:0;
   padding: 0;
-  height: 100vh;
+  /*height: 100vh;
   background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.9)), url("img/background2.jpg") ;
   background-size: 100vw 100vh;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
+  
 }
 
 .title {

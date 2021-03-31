@@ -1,5 +1,6 @@
 <?php 
   
+  
 
   $email = $name = '';
   require("includes/db.php");
@@ -94,19 +95,36 @@
   ?>
 
   <main class="signup">
-    <form class="form" action="signup.php" method="POST"> 
+
+    
+    <form class="form" action="signup.php" method="POST" onsubmit = "return submitting()"> 
       <input type="email" id="email" name="email" placeholder="Email" value="<?php echo $email;?>" required>
       <span class="error"><?php echo $errors['email'] ?></span>
       <input type="text" id="username" name="user-name" placeholder="Username" value="<?php echo $name;?>" required>
+      <sub class = "usernamecheck">Username is taken</sub>
       <span class="error"><?php echo $errors['username'] ?></span>
-      <input type="password" id="password" name="password" placeholder="Password" required>
+      <div class="passwordfield">
+        <input type="password" id="password" name="password" placeholder="Password" value="" required><i>Show</i>
+      </div>
+      
       <span class="error"><?php echo $errors['password'] ?></span>
-      <input type="password" id="rpassword" name="rpassword" placeholder="Confirm Password" required>
-      <span class="error"><?php echo $errors['rpassword'] ?></span>
+      
+      <input type="password" id="rpassword" name="rpassword" placeholder="Confirm Password" value="" required>
+
+      <span class="error"><?php echo $errors['rpassword'] ?> </span>
+      <div class="match">
+        Passwords don't Match
+      </div>
+      <div class="info">
+        <p id="eight"> 8 characters minimum </p> 
+        <p id="lower">Lowercase letter </p>
+        <p id="upper">Uppercase letter </p>
+        <p id="numbers" >Numbers   </p>
+      </div>
       <input name="submit" type="submit" id="signup"  value="Sign Up">
 
     </form>
   </main>
-  
+  <script src="js/signup.js"></script>
 </body>
 </html>

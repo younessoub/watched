@@ -1,15 +1,22 @@
 <?php
+  session_start();
+  if(isset($_SESSION['name'])){
+    echo "test";
+    header("location: user/home.php");
+    exit();
+  }
   require("includes/db.php");
   require("includes/functions.php");
 
   $account='';
   $info = '';
+  $name = '';
   if(isset($_GET['a'])){
     if($_GET['a']==='created'){
       $account = "Your Account Has Been Created Successfully, Please Log In. ";
     }
   }
-
+ 
   if(isset($_POST['login'])){
     $name = validate($_POST['username']);
     $password = validate($_POST['password']);
@@ -29,7 +36,10 @@
       $checkpassword = password_verify($password, $hpassword);
       if($checkpassword){
         //user logged in successfully
-        
+        session_start();
+        $_SESSION['id'] = $row['id'];
+        $_SESSION['name'] = $row['name'];
+        header("location: user/home.php");
       }
       else{
         $info = "Wrong Email or Password";
@@ -60,10 +70,12 @@
   <form class="login" action="login.php" method="POST">
     <span class="success"><?php echo $account ; ?></span>
     <span class="wrong"><?php echo $info ; ?></span>
-    <input type="text" name="username" placeholder="Username or Email" required>
-    <input type="password" name="password" placeholder="Password" required>
+    <input type="text" name="username" placeholder="Username or Email" value="<?php echo $name ?>" required>
+    <div class="passwordfield">
+    <input type="password" id = "password" name="password" placeholder="Password" required><i>Show</i>
+    </div>
     <input id="submit" name="login" type="submit" value="Log In">
   </form>
-
+  <script src="js/login.js"></script>
 </body>
 </html>
