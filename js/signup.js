@@ -21,7 +21,7 @@ error.addEventListener("click",function(){
 //variables used in submitting function to allow or disable submitting
 var passmatch = false;
 var passvalid = false;
-var namevalid = false;
+var namevalid = true;
 
 
 //showing and hiding password
