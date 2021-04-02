@@ -11,10 +11,12 @@
   <?php 
     include("includes/header.php");
   ?>
-  <main class="login-signup">
-    
-    <a href="login.php"><button  class="btn"> Log In</button></a>
-    <a href="signup.php"><button  class="btn">Sign Up</button></a>
+  <main class="main">
+    <section></section>
+    <section class="login-signup">
+      <a href="login.php"><button  class="btn"> Log In</button></a>
+      <a href="signup.php"><button  class="btn">Sign Up</button></a>
+    </section>
   </main>
   
 </body>

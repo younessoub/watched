@@ -1,10 +1,11 @@
-.login-signup{
+.main{
   margin: 3rem auto auto auto;
   width: 60vw;
   max-width: 400px;
   display: flex;
   flex-direction: column;  
 }
+
 
 .btn{
   font-size: 1.5rem;
@@ -18,7 +19,17 @@
   height:3rem;
   cursor: pointer;
   margin: 20px 0;
-  
+
+}
+
+.login-signup{
+  display:none;
+}
+
+@media (max-width:400px){
+  .login-signup{
+    display:block;
+  } 
 }
 
 

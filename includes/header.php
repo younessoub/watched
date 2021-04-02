@@ -1,6 +1,6 @@
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 *{
   box-sizing: border-box;
   /*border: 1px black solid;*/
@@ -8,7 +8,7 @@
 }
 
 body{
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Poppins', sans-serif;
   margin:0;
   padding: 0;
   /*height: 100vh;
@@ -18,15 +18,7 @@ body{
   
 }
 
-.title {
-  font-weight: 900;
-  font-size: 370%;
-  display: flex;
-  justify-content: center;
-  margin:30px;
-  text-align:center;
-  cursor:pointer;
-}
+
 
 .title a{
   text-decoration: none;
@@ -35,22 +27,61 @@ body{
 }
 
 .header{
-  display: flex;
-  flex-direction: column;
+  margin: auto 5vw;
 }
 
-.description{
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  color:rgb(88, 157, 246);
-  position: relative;
-  top: -50px;
-  padding: 10px;
+
+.nav{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+}
+
+.navbar{
+  list-style:none;
+  height:30px;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  width:10rem;
+}
+
+.navbar li{
+  width:45%;
+  font-weight:900;
+  margin-top:0.6rem;
+  
+}
+
+.navbar li a{
+  text-decoration:none;
+}
+
+.title{
+  margin-top:0;
+  font-size:2rem;
+  font-weight:900;
+}
+
+@media (max-width:400px){
+  .navbar{
+    display:none;
+  }
 }
 </style>
 
 <header class="header">
-    <h1 class="title"><a href="index.php">Watched</a></h1>
-    <p class="description">Keep track of your favorite Movies and Tv Shows</p>
+  
+    <nav class="nav">
+      <h1 class="title"><a href="index.php">Watched</a></h1>
+      <ul class="navbar">
+        <li><a href="login.php">Log In</a></li>
+        <li><a href="signup.php">Sign Up</a></li>
+
+      </ul>
+    </nav>
+    
 </header>
+
