@@ -74,7 +74,10 @@
     <div class="passwordfield">
     <input type="password" id = "password" name="password" placeholder="Password" required><i>Show</i>
     </div>
-    <input id="submit" name="login" type="submit" value="Log In">
+    <div class="submit">
+      <input id="submit" name="login" type="submit" value="Log In">
+      <p class="signup-link">Don't have an account? <a href="signup.php">Sign Up</a></p>
+    </div>
   </form>
   <script src="js/login.js"></script>
 </body>

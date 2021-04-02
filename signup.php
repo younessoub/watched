@@ -121,7 +121,10 @@
         <p id="upper">Uppercase letter </p>
         <p id="numbers" >Numbers   </p>
       </div>
-      <input name="submit" type="submit" id="signup"  value="Sign Up">
+      <div class="submit">
+        <input name="submit" type="submit" id="signup"  value="Sign Up">
+        <p class="login-link">Already have an account? <a href="login.php">Log in</a></p>
+      </div>
 
     </form>
   </main>

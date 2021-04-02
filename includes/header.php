@@ -51,6 +51,6 @@ body{
 </style>
 
 <header class="header">
-    <h1 class="title"><a href="index.php">Watch It</a></h1>
+    <h1 class="title"><a href="index.php">Watched</a></h1>
     <p class="description">Keep track of your favorite Movies and Tv Shows</p>
 </header>
