@@ -1,11 +1,6 @@
 .main{
-  margin: 3rem auto auto auto;
-  width: 60vw;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;  
-}
 
+}
 
 .btn{
   font-size: 1.5rem;
@@ -19,18 +14,38 @@
   height:3rem;
   cursor: pointer;
   margin: 20px 0;
-
+  
 }
 
 .login-signup{
-  display:none;
+  margin: 3rem auto auto auto;
+  width: 80%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;  
+  
 }
 
-@media (max-width:400px){
-  .login-signup{
-    display:block;
-  } 
+
+
+
+.title{
+  text-align: center;
+  color: white;
+  margin-top:0;
+  font-size:2rem;
+  font-weight:900;
+  
 }
+
+
+
+
+
+
+
+
+
 
 
 

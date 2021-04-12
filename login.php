@@ -79,6 +79,9 @@
       <p class="signup-link">Don't have an account? <a href="signup.php">Sign Up</a></p>
     </div>
   </form>
+  <?php 
+    include("includes/footer.php");
+  ?>
   <script src="js/login.js"></script>
 </body>
 </html>

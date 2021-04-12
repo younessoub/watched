@@ -26,7 +26,7 @@ if(isset($_SESSION['name'])){
 <?php 
   }
 else{
-  header("location: ../index.php");
+  header("location: ../login.php");
 }
 
 ?>

@@ -128,6 +128,9 @@
 
     </form>
   </main>
+  <?php 
+    include("includes/footer.php");
+  ?>
   <script src="js/signup.js"></script>
 </body>
 </html>
