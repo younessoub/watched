@@ -48,15 +48,22 @@ body{
   display:flex;
   flex-direction:row;
   justify-content:space-between;
-  width:10rem;
+  
+  
 }
 
 .navbar li{
-  width:45%;
+
+  margin: 1.5rem 7px; 
   font-weight:900;
-  margin-top:0.6rem;
+  
   
 }
+
+.navbar li :hover{
+  background-color: dodgerblue;
+}
+
 
 .navbar li a{
   text-decoration:none;
@@ -96,7 +103,7 @@ body{
 .menu{
   display:none;
   position:absolute;
-  width:300px;
+  min-width:200px;
   border:white 1px solid;
   padding-top:30px;
   top:0;
@@ -113,6 +120,10 @@ body{
   width:100%;
   height:50px;
   padding:20px;
+}
+
+.menu ul li :hover{
+  background-color: dodgerblue;
 }
 
 .menu ul{
@@ -173,7 +184,16 @@ body{
 <header class="header">
   
     <nav class="nav">
-      <h1 class="title"><a href="index.php">Watched</a></h1>
+      <h1 class="title">
+        <?php 
+          if(isset($_SESSION["name"])){
+            echo '<a href="../index.php">Watched</a>';
+          } else {
+            echo '<a href="index.php">Watched</a>';
+          }
+        ?>
+        
+      </h1>
 
       <div class="menu-toggle">
         <span class="bar"></span>
@@ -187,7 +207,37 @@ body{
 						</svg>
     
 
+      <?php 
 
+
+      
+      if(isset($_SESSION['name'])){
+        
+      ?>
+      <!--small screen nav -->
+
+      <div class="menu">
+
+        <ul class="menu-items">
+          <li><a href="home.php">Home</a></li>
+          <li><a href="movies.php">Movies</a></li>
+          <li><a href="tvshows.php">Tv Shows</a></li>
+          <li><a href="logout.php">Log Out</a></li>
+        </ul>
+      </div>
+
+
+      <!--big screen nav -->
+      <ul class="navbar">
+        <li><a href="home.php">Home</a></li>
+        <li><a href="movies.php">Movies</a></li>
+        <li><a href="tvshows.php">Tv Shows</a></li>
+        <li><a href="logout.php">Log Out</a></li>
+      </ul>
+
+      <?php }else{ ?>
+
+      
       <div class="menu">
 
         <ul class="menu-items">
@@ -200,6 +250,8 @@ body{
         <li><a href="signup.php">Sign Up</a></li>
 
       </ul>
+
+      <?php } ?>
     </nav>
     
 </header>

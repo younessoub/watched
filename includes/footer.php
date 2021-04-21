@@ -13,6 +13,7 @@
   border: 1px solid black;
   position: absolute;
   bottom: 0;
+  height:40px;
   width:100%;
   background-color: #08243e;
   color: white;
