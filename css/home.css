@@ -25,9 +25,11 @@
   display:inline-block;
   background: rgba(255, 255, 255,0.2); 
   margin:10px;
-  height: 200px;
+  /* height: 200px; */
   border-radius: 5px;
   overflow: hidden;
+  cursor: pointer;
+  width: 150px;
 }
 
 .image img{
@@ -37,12 +39,15 @@
 
 .info{
   color:white;
-  border:1px red solid;
-  height: 100px;
-  margin-top: 0px;
+  /* border:1px red solid; */
+  /* height: 200px; */
+  
 }
 
+.info p{
+  word-wrap: break-word;
+}
 .image,
 .info{
-  display: inline-block;
+  /* display: inline-block; */
 }

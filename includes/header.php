@@ -61,7 +61,7 @@ body{
 }
 
 .navbar li :hover{
-  background-color: dodgerblue;
+  background-color: black;
 }
 
 
@@ -123,7 +123,7 @@ body{
 }
 
 .menu ul li :hover{
-  background-color: dodgerblue;
+  background-color: black;
 }
 
 .menu ul{
@@ -220,8 +220,7 @@ body{
 
         <ul class="menu-items">
           <li><a href="home.php">Home</a></li>
-          <li><a href="movies.php">Movies</a></li>
-          <li><a href="tvshows.php">Tv Shows</a></li>
+          <li><a href="movies.php">My Movies</a></li>
           <li><a href="logout.php">Log Out</a></li>
         </ul>
       </div>
@@ -230,8 +229,7 @@ body{
       <!--big screen nav -->
       <ul class="navbar">
         <li><a href="home.php">Home</a></li>
-        <li><a href="movies.php">Movies</a></li>
-        <li><a href="tvshows.php">Tv Shows</a></li>
+        <li><a href="movies.php">My Movies</a></li>
         <li><a href="logout.php">Log Out</a></li>
       </ul>
 

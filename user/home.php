@@ -34,8 +34,8 @@ if(isset($_SESSION['name'])){
           <img src="https://i.ytimg.com/vi/MJuFdpVCcsY/movieposter_en.jpg" alt="">
         </div>
         <div class="info">
-          <p>Jumanji <span>2020</span></p>
-          <p>Your Rating : 8/10</p>
+           <span>2018</span>
+          <p>My Rating :<span> <i>8</i>/10</span></p>
         </div>
       </div>
 
@@ -44,8 +44,8 @@ if(isset($_SESSION['name'])){
           <img src="https://i.ytimg.com/vi/MJuFdpVCcsY/movieposter_en.jpg" alt="">
         </div>
         <div class="info">
-          <p>Jumanji <span>2020</span></p>
-          <p>Your Rating : 8/10</p>
+          <span>2018</span>
+          <p>My Rating :<span> <i>8</i>/10</span></p>
         </div>
       </div>
 
@@ -54,8 +54,8 @@ if(isset($_SESSION['name'])){
           <img src="https://i.ytimg.com/vi/MJuFdpVCcsY/movieposter_en.jpg" alt="">
         </div>
         <div class="info">
-          <p>Jumanji <span>2020</span></p>
-          <p>Your Rating : 8/10</p>
+          <span>2018</span>
+          <p>My Rating :<span> <i>8</i>/10</span></p>
         </div>
       </div>
       <div class="element">
@@ -63,8 +63,8 @@ if(isset($_SESSION['name'])){
           <img src="https://i.ytimg.com/vi/MJuFdpVCcsY/movieposter_en.jpg" alt="">
         </div>
         <div class="info">
-          <p>Jumanji <span>2020</span></p>
-          <p>Your Rating : 8/10</p>
+          <span>2018</span>
+          <p>My Rating :<span> <i>8</i>/10</span></p>
         </div>
       </div>
     </div>

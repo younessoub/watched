@@ -16,7 +16,7 @@
   <main class="main">
     <section>
       <div class="title-container">
-        <h2 class="title">Keep track of your favorite Movies and Tv shows</h2>
+        <h2 class="title">Keep track of your favorite Movies</h2>
       </div>
     </section>
     <section class="login-signup">
