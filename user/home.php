@@ -13,6 +13,7 @@ if(isset($_SESSION['name'])){
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/home.css?v=<?php echo time(); ?>">
+  <script src="../js/home.js" defer></script>
   <title>Home</title>
 </head>
 <body>
@@ -29,7 +30,7 @@ if(isset($_SESSION['name'])){
     </div>
     <div class="search-results">
 
-      <div class="element">
+      <!-- <div class="element">
         <div class="image">
           <img src="https://i.ytimg.com/vi/MJuFdpVCcsY/movieposter_en.jpg" alt="">
         </div>
@@ -66,7 +67,8 @@ if(isset($_SESSION['name'])){
           <span>2018</span>
           <p>My Rating :<span> <i>8</i>/10</span></p>
         </div>
-      </div>
+      </div> -->
+
     </div>
   
   </main>
