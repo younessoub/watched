@@ -1,4 +1,4 @@
-const APIURL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
+const APIURL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=";
 
 const IMGPATH = "https://image.tmdb.org/t/p/w1280";
 
@@ -8,31 +8,49 @@ const searchRes = document.querySelector(".search-results");
 
 
 
-async function getMovies(url){
-  var res = fetch(url)
-  .then(response => response.json())
-  .then(data => data.results);
-  return res;
-  
-  // const resp = await fetch(url);
-  // const data = await resp.json();
-  // return data.results;
-}
-
-function showMovies(movies){
-  for( i in movies){
-    console.log("test");
-    searchRes.innerHTML="test";
-    var movie = document.createElement("div");
-    movie.classList.add("element");
-  
-    movie.innerHTML = "<div class=\"image\"><img src="+IMGPATH+movies[i].poster_path+" alt="+movies[i].title+"></div><div class=\"info\"><span>2018</span><p>Rating :<span>"+movies[i].vote_average+"</span></p></div>"  ;
-
-    searchRes.appendChild(movie);
+async function showMovies(url,i=1) {
+  searchRes.innerHTML = " ";
+  while(i<=4){
+    const resp = await fetch(url+i);
+    const respData = await resp.json();
+    var movies = respData.results;
+    console.log(respData.results);
+    for(j in movies){
+      
+      var div = document.createElement("div");
+      div.classList.add("element");
+      var image = document.createElement("img");
+      image.src = IMGPATH+movies[j].poster_path;
+      image.alt = movies[j].title;
+      div.appendChild(image);
+      searchRes.appendChild(div);
+    }   
+    
+    i++; 
   }
-  
-  
-
+  if(searchRes.innerHTML==" "){
+    searchRes.innerHTML = "<div style='border:1px solid black;background: rgba(255, 255, 255,0.2);border-radius:5px;width:80vw;margin:100px auto'><h1 style=\"color:red;\">Error</h1><p>Something went wrong</p><button>Try Again</button></div>";
+  }
 }
+// function showMovies(url,i=1){
+//   searchRes.innerHTML = " ";
 
-showMovies(getMovies(APIURL));
+  // var xhr = new XMLHttpRequest();
+  // xhr.onreadystatechange = function(){
+  //   if(this.status==200 && this.readyState == 4){
+      
+  //     var movies = JSON.parse(this.responseText).results;
+  //     console.log(movies)
+
+      
+  //   }
+  // } 
+
+  // xhr.open("GET",url+i,true);
+  // xhr.send();
+
+//   }
+
+// }
+
+showMovies(APIURL);

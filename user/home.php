@@ -23,13 +23,15 @@ if(isset($_SESSION['name'])){
   ?>
   
   
+  
   <main>
+    <h3 class="welcome">Welcome <?php echo $_SESSION['name']?>!</h3>
     <div class="search">
       <input class="search-field" placeholder="Search" type="text">
       <input class="search-button" type="button" value="Go">
     </div>
     <div class="search-results">
-
+       
       <!-- <div class="element">
         <div class="image">
           <img src="https://i.ytimg.com/vi/MJuFdpVCcsY/movieposter_en.jpg" alt="">

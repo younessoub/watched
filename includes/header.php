@@ -220,7 +220,7 @@ body{
 
         <ul class="menu-items">
           <li><a href="home.php">Home</a></li>
-          <li><a href="movies.php">My Movies</a></li>
+          <li><a href="mymovies.php">My Movies</a></li>
           <li><a href="logout.php">Log Out</a></li>
         </ul>
       </div>
@@ -229,10 +229,10 @@ body{
       <!--big screen nav -->
       <ul class="navbar">
         <li><a href="home.php">Home</a></li>
-        <li><a href="movies.php">My Movies</a></li>
+        <li><a href="mymovies.php">My Movies</a></li>
         <li><a href="logout.php">Log Out</a></li>
       </ul>
-
+      
       <?php }else{ ?>
 
       
