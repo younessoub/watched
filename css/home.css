@@ -7,11 +7,12 @@
   max-width: 500px;
   text-align: center;
   height: 30px;
-  font-weight:900 ;
+  font-weight:900;
 }
 
 .search-button{
   height: 33px;
+  cursor: pointer;
 }
 
 .search-results{
@@ -30,11 +31,13 @@
   overflow: hidden;
   cursor: pointer;
   width: 150px;
+  height: 200px;
 }
 
 img{
   width: 150px;
   height: 200px;
+  cursor: pointer;
 }
 
 .info{
@@ -55,4 +58,18 @@ img{
 .welcome{
   color:white;
   margin-left:50px;
+}
+
+.loading{
+  color:white;
+  font-size: 1rem;
+}
+
+.more{
+  display: block;
+  margin: 20px auto;
+  height: 3rem;
+  width: 5rem;
+  cursor: pointer;
+  font-size: 1rem;
 }
