@@ -9,17 +9,29 @@ const searchRes = document.querySelector(".search-results");
 const query = document.querySelector(".search-field");
 const search = document.querySelector(".search-button");
 var term;
+
+var pageMovies = {};//object to track all movies in the page
+
+
 search.addEventListener('click',()=>{
   
   if(query.value.trim().length){
     searching = true;
     term = SEARCHAPI+query.value+"&page=";
     showMovies(term);
-    
+    query.value ="";
     
   }
 });
 
+query.addEventListener("keyup",function(event){
+  if(event.keyCode===13){
+    event.preventDefault();
+    search.click();
+  }
+});
+
+//button to show more movies
 let m=3;
 var more = document.createElement("button");
 more.innerText = "More...";
@@ -35,7 +47,7 @@ more.addEventListener('click',function(){
 more.classList.add("more")
 
 
-function tryAgain(){
+function tryAgain(){//reload in case of error
   location.reload(); 
   
 }
@@ -47,9 +59,11 @@ async function showMovies(url,i=1) {
     const resp = await fetch(url+i);
     const respData = await resp.json();
     var movies = respData.results;
+    console.log(respData.results)
     if(i==1){
       searchRes.innerHTML = " ";
     }
+
     for(j in movies){
       
       var div = document.createElement("div");
@@ -59,6 +73,8 @@ async function showMovies(url,i=1) {
       image.alt = movies[j].title;
       div.appendChild(image);
       searchRes.appendChild(div);
+      pageMovies[movies[j].title] = movies[j].id;
+      image.addEventListener("click",showInfo);
     }   
     
     i++; 
@@ -72,3 +88,14 @@ async function showMovies(url,i=1) {
 }
 
 showMovies(APIURL);
+
+
+async function showInfo(){
+  let title = this.alt;
+  let id = pageMovies[title];
+  let url = "https://api.themoviedb.org/3/movie/"+id+"?api_key=04c35731a5ee918f014970082a0088b1";
+  const resp = await fetch(url);
+  const respData = await resp.json();
+  let movie = respData;
+  alert(movie.overview)
+}
