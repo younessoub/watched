@@ -187,9 +187,9 @@ body{
       <h1 class="title">
         <?php 
           if(isset($_SESSION["name"])){
-            echo '<a href="../index.php">Watched</a>';
+            echo '<a href="home.php">Watched</a>';
           } else {
-            echo '<a href="index.php">Watched</a>';
+            echo '<a href="user/home.php">Watched</a>';
           }
         ?>
         

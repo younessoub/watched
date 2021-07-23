@@ -92,14 +92,8 @@ async function showMovies(url,i=1) {
 showMovies(APIURL);//calling function to show movies on home page
 
 
-async function showInfo(){
+async function showInfo(){//function for clicking an image
   let title = this.alt;
   let id = pageMovies[title];
-  let url = "https://api.themoviedb.org/3/movie/"+id+"?api_key=04c35731a5ee918f014970082a0088b1";
-  const resp = await fetch(url);
-  const respData = await resp.json();
-  let movie = respData;
- 
-  console.log(movie)
-
+  window.location = "movie.php?id="+id ;
 }
