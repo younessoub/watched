@@ -40,20 +40,6 @@ img{
   cursor: pointer;
 }
 
-.info{
-  color:white;
-  /* border:1px red solid; */
-  /* height: 200px; */
-  
-}
-
-.info p{
-  word-wrap: break-word;
-}
-.image,
-.info{
-  /* display: inline-block; */
-}
 
 .welcome{
   color:white;
@@ -63,6 +49,11 @@ img{
 .loading{
   color:white;
   font-size: 1rem;
+  position: absolute;
+  width:40vw;
+  margin:200px 30vw;
+  /* border: black 1px solid; */
+  text-align: center;
 }
 
 .more{
@@ -73,3 +64,4 @@ img{
   cursor: pointer;
   font-size: 1rem;
 }
+
