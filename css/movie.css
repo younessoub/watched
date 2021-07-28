@@ -28,7 +28,7 @@
   
 }
 
-.title{
+.t{ /*movie title */
   color: rgb(226, 230, 22);
   font-size: 1.5rem;
 }
@@ -62,6 +62,7 @@
   width: 90%;
   margin: 10px 5%;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .range::-moz-range-thumb {
@@ -78,6 +79,6 @@
   font-size: 1rem;
 }
 
-#rate, .range, .save{
+ .range, .save{
   display: block;
 }

@@ -1,6 +1,14 @@
 const IMGPATH = "https://image.tmdb.org/t/p/w1280";
 
-const div = document.querySelector(".info");
+const div = document.querySelector(".info");//main div
+const img = document.querySelector(".backdrop");
+const title = document.querySelector(".t");
+const dir = document.querySelector(".director");
+const date = document.querySelector(".date");
+const time = document.querySelector(".time");
+const tagline = document.querySelector(".tagline");
+const overview = document.querySelector(".overview");
+const rate = document.getElementById("rate");
 
 var director;//director name
 
@@ -17,11 +25,19 @@ async function getMovie(id){
   const resp = await fetch(url);
   const respData = await resp.json();
   let movie = respData;
-
+  console.log(movie);
   await getCredits(id);
-
-  div.innerHTML = "<img class='backdrop' src= "+IMGPATH+movie.backdrop_path+" alt=''/><p  class='infos title' >"+movie.title+"</p><p class='infos'>Directed by : "+director+"</p><p class='infos'>Release date : "+movie.release_date+"</p><p class='infos'>Runtime : "+movie.runtime+" min</p><p class='infos tagline'>"+movie.tagline+"</p><p class='infos'>"+movie.overview+"</p><div class='rating'> Your Rating :<form class='rating-form' action='../config/save-movie.php' method='POST' ><span id='rate' > </span> <input class='range' type='range'  oninput='getRating(this.value)' value='0' min='0' max='10' step='0.1' name='rating' required/><input class ='save' type='submit' value ='Save'/></form></div>";
-  rate = document.getElementById("rate");
+  console.log(director);
+    
+  img.src = IMGPATH+movie.backdrop_path;
+  title.innerText = movie.title;
+  dir.innerText += director;
+  date.innerText += movie.release_date;
+  time.innerText += movie.runtime;
+  tagline.innerText = movie.tagline;
+  overview.innerText = movie.overview;
+  // div.innerHTML += "<img class='backdrop' src= "+IMGPATH+movie.backdrop_path+" alt=''/><p  class='infos title' >"+movie.title+"</p><p class='infos director'>Directed by : "+director+"</p><p class='infos date'>Release date : "+movie.release_date+"</p><p class='infos time'>Runtime : "+movie.runtime+" min</p><p class='infos tagline'>"+movie.tagline+"</p><p class='infos overview'>"+movie.overview+"</p><div class='rating'>  Rate this movie :<form class='rating-form' action='../config/save-movie.php?id="+id+"' method='POST' ><span id='rate' >0 </span>/10 <input class='range' type='range'  oninput='getRating(this.value)' value='0' min='0' max='10' step='0.1' name='rating' required/><input class ='save' type='submit' value ='Save'/></form></div>";
+  
 }
 
 async function getCredits(id){

@@ -1,0 +1,26 @@
+.mymovies{
+  width: 90%;
+  /* border: 1px solid black; */
+  margin: 0 5%;
+  text-align: center;
+}
+
+.element{
+  display: inline-block;
+  margin: 5px;
+  border: 1px black solid;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  color: white;
+
+}
+
+.img{
+  width: 150px;
+  height: 200px;
+}
+
+.nada{
+  color: white;
+}
