@@ -3,6 +3,7 @@
   
 
 if(isset($_SESSION['name'])){
+
 ?>
 
 <!DOCTYPE html>
@@ -12,6 +13,7 @@ if(isset($_SESSION['name'])){
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/mymovies.css?v=<?php echo time(); ?>">
+  <script src="../js/mymovies.js" defer></script>
   <title>My Movies</title>
 </head>
 <body>
@@ -47,13 +49,19 @@ if(isset($_SESSION['name'])){
           $response = json_decode(file_get_contents($url));
           
     ?>
-        <a href="movie.php?id=<?php echo $results['movieId']; ?>"><div class="element">
-          <span class="remove">x</span>
-          <div class="img"><img class="img" src="<?php echo $IMGPATH.$response->poster_path ?>" alt="<?php echo $response->title; ?>"></div>
-          <div>
-            <p ><?php echo $results["rating"];?></p>
+        
+          <div class="element">
+            <a href="../config/deletemovie.php?id=<?php echo $results['movieId'];?>"><span class="remove">x</span></a>
+            <a href="movie.php?id=<?php echo $results['movieId']; ?>">
+              <div class="img">
+                <img class="img" src="<?php echo $IMGPATH.$response->poster_path ?>" alt="<?php echo $response->title; ?>">
+              </div>
+            </a>
+            <div>
+              <p ><?php echo $results["rating"];?></p>
+            </div>
           </div>
-        </div></a>  
+        
      
     <?php
         }
