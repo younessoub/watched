@@ -26,7 +26,7 @@ if(isset($_SESSION['name'])){
     require("../includes/db.php");
     $userId = $_SESSION["id"]; 
 
-    $sql = "SELECT  movieId, rating FROM movies WHERE userId = ? ;";
+    $sql = "SELECT  movieId, rating FROM movies WHERE userId = ? ORDER BY rating DESC;";
     $stmt = mysqli_stmt_init($conn);
     mysqli_stmt_prepare($stmt, $sql);
     mysqli_stmt_bind_param($stmt,"i",$userId);
@@ -48,7 +48,8 @@ if(isset($_SESSION['name'])){
           
     ?>
         <a href="movie.php?id=<?php echo $results['movieId']; ?>"><div class="element">
-          <img class="img" src="<?php echo $IMGPATH.$response->poster_path ?>" alt="">
+          <span class="remove">x</span>
+          <div class="img"><img class="img" src="<?php echo $IMGPATH.$response->poster_path ?>" alt="<?php echo $response->title; ?>"></div>
           <div>
             <p ><?php echo $results["rating"];?></p>
           </div>

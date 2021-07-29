@@ -12,8 +12,9 @@ if(isset($_SESSION['name'])){
 
     $userId = $_SESSION["id"]; 
     $movieId = intval(htmlspecialchars( $_GET["id"]),  10);
-    $rating = htmlspecialchars($_POST["rating"]);
-   
+    $rating = floatval(htmlspecialchars($_POST["rating"]));
+  
+  
     function movieExists($conn, $userId, $movieId){
       $sql = "SELECT * FROM movies WHERE userId = ? AND movieId = ? ;";
       $stmt = mysqli_stmt_init($conn);
@@ -35,7 +36,7 @@ if(isset($_SESSION['name'])){
     $sql = "INSERT INTO movies (userId, movieId, rating) VALUES(?,?, ?);";   
     $stmt = mysqli_stmt_init($conn);
     mysqli_stmt_prepare($stmt, $sql);
-    mysqli_stmt_bind_param($stmt, "iis", $userId, $movieId, $rating);
+    mysqli_stmt_bind_param($stmt, "iid", $userId, $movieId, $rating);
     mysqli_stmt_execute($stmt);
     
     header("location: ../user/mymovies.php");
